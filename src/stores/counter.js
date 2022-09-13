@@ -7,5 +7,20 @@ export const useCounterStore = defineStore({
   	count: 0,
   	name: 'Leonardo Filipe',
   	username: 'leonardofilipe'
-  })
+  }),
+  actions: {
+  	increaseCount() {
+  		this.count++
+  	},
+  	decreaseCount(){
+  		this.count--
+  	}
+  },
+  getters: {
+  	oddOrEven: (state) => {
+  				if (state.count % 2 ===0 ){
+			return 'par'
+		} else {return 'impar'}
+  	}
+  }
 })
